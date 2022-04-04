@@ -41,7 +41,7 @@
         <input type='file' name='picture' class='form-control' />
     </div>
 
-    <button type="submit" name='update' class="btn btn-primary">>Update</button>
+    <button type="submit" name='update' class="btn btn-primary">Update</button>
     </form>
 
    

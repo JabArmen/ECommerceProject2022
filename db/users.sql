@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Feb 22, 2022 at 07:20 PM
--- Server version: 10.4.20-MariaDB
--- PHP Version: 8.0.9
+-- Host: localhost
+-- Generation Time: Mar 24, 2022 at 02:58 PM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `users`
 --
-CREATE DATABASE IF NOT EXISTS `users` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `users`;
 
 -- --------------------------------------------------------
 
@@ -32,16 +30,18 @@ USE `users`;
 CREATE TABLE `credentials` (
   `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
-  `pass_hash` varchar(255) NOT NULL
+  `pass_hash` varchar(255) NOT NULL,
+  `secret` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `credentials`
 --
 
-INSERT INTO `credentials` (`id`, `username`, `pass_hash`) VALUES
-(1, 'test', '$2y$10$wIDezbUb3QiuuRAC1FKvp.GhZCWz5.yJ7c6wMygPY9yTbPe8nJYpe'),
-(2, 'parth', '$2y$10$KscysJLnoQHNL0vwLHvCY.n0kOFyDGU6DF0MuUG5aeK6AJBb8dsuK');
+INSERT INTO `credentials` (`id`, `username`, `pass_hash`, `secret`) VALUES
+(14, 'parth', '$2y$10$JPG.qKXQmaM8hlgLE06zDO21LMPEdWfNH6xfHLDMCm9J6IoIT1d.G', '6YWCH5BFI6VT2L2L'),
+(15, 'asdf', '$2y$10$nfm4yLXRAH9laZlkPZ/EQeZw6SYndmLKr7H1lslpfmpyzabk6S0lq', 'HBW2RS7VRNVSNJK4'),
+(17, 'test', '$2y$10$wKNtCDdBBsUOStfsj4wKKOEZ7Fr/ogG0GGhgGj.kR7u2t2ilQVQGe', 'YLSGGL35JZAEZL7V');
 
 -- --------------------------------------------------------
 
@@ -62,8 +62,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`ID`, `Name`, `City`, `Phone`, `Picture`) VALUES
-(1, 'Daves', 'Halifax', 1, '621524ce40f00.jpg'),
-(54, 'NewUser', 'NewCity', 1, '621523556cf5e.jpg');
+(1, 'Dave', 'Halifax', 1, '0');
 
 --
 -- Indexes for dumped tables
@@ -90,13 +89,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `credentials`
 --
 ALTER TABLE `credentials`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

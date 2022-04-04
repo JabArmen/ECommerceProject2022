@@ -33,7 +33,7 @@
             foreach($data["users"] as $user){
                 echo"<tr>";
                 echo '<td>
-                <div class="d-flex align-items-center"><img class="rounded-circle" src="'.URLROOT.'/public/img/'.$user->picture.'" width="30"><span class="ml-2">'.$user->Name.'</span></div>
+                <div class="d-flex align-items-center"><img class="rounded-circle" src="'.URLROOT.'/public/img/'.$user->Picture.'" width="30"><span class="ml-2">'.$user->Name.'</span></div>
             </td>';
                 echo"<td>$user->ID</td>";
                 echo"<td>$user->City</td>";

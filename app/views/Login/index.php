@@ -11,7 +11,11 @@
         <label for="password">Password</label>
         <input type="password" class="form-control" id="password" name="password" placeholder="Password">
     </div>
-    <div> 
+    <div class="form-group">
+        <label for="code">Code</label>
+        <input type="numeber" class="form-control" id="code" name="code" placeholder="Code">
+    </div>
+    <div class='mt-2'> 
         <button type="submit" name="login" class="btn btn-primary">Sign in</button>
         <p class="text-center">Not registered yet? <a href="/MVC/Login/Create">Sign Up</a> </p>
     </div>

@@ -25,5 +25,22 @@
             }
 
         }
+
+        public function updateUser($data){
+            $this->db->query("UPDATE credentials SET secret = :secret WHERE id = :userid");
+            $this->db->bind(':userid', $_SESSION['user_id']);
+            $this->db->bind(':secret', $data['secret']);
+
+
+            if($this->db->execute()){
+                return true;
+            }
+            else{
+                return false;
+            }
+
+        }
+
+
     }
 ?>

@@ -1,32 +1,29 @@
 <?php require APPROOT . '/views/includes/header.php';  ?>
-<form>
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Email address</label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlSelect1">Example select</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlSelect2">Example multiple select</label>
-    <select multiple class="form-control" id="exampleFormControlSelect2">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlTextarea1">Example textarea</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-  </div>
+
+<h2>Contact form</h2>
+<form class="px-4 py-3" method="post" action="">
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" name="username" placeholder="Username">
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+    </div>
+    <div class='mt-2'> 
+        <button type="submit" name="login" class="btn btn-primary">Sign in</button>
+        <p class="text-center">Not registered yet? <a href="/MVC/Login/Create">Sign Up</a> </p>
+    </div>
+    <?php
+
+    if($data != []){
+        echo '<div class="alert alert-danger" role="alert">'.
+            $data['msg'].'
+        </div>';
+    }
+
+?>
+
 </form>
-    <?php require APPROOT . '/views/includes/footer.php'; ?>
+
+<?php require APPROOT . '/views/includes/footer.php'; ?>

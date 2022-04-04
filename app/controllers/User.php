@@ -82,7 +82,7 @@
         public function update($user_id){
             $user = $this->userModel->getUser($user_id);
             if(!isset($_POST['update'])){
-                $this->view('User/updateUser',$,);
+                $this->view('User/updateUser',$user);
             }
             else{
                 $filename= $this->imageUpload();
