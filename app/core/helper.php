@@ -14,15 +14,15 @@ include_once dirname(APPROOT).'/vendor/sonata-project/google-authenticator/src/G
         }
       }
 
-    function check($secret, $code){
-        $g = new \Sonata\GoogleAuthenticator\GoogleAuthenticator();
-        if($g->checkCode($secret, $code)){
-                return true;
-            }
-            else{
-                return false;
-            }
-    }
+    // function check($secret, $code){
+    //     $g = new \Sonata\GoogleAuthenticator\GoogleAuthenticator();
+    //     if($g->checkCode($secret, $code)){
+    //             return true;
+    //         }
+    //         else{
+    //             return false;
+    //         }
+    // }
       
       
 

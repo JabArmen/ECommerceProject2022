@@ -4,7 +4,7 @@
   // URL Root
   define('URLROOT', 'http://localhost/ECommerceProject2022');
   // Site Name
-  define('SITENAME', '420-411-VA: PHP MVC Application');
+  define('SITENAME', 'Sussy Keychains');
 
   // Database Params
   define('DB_HOST', 'localhost');
