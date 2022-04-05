@@ -10,7 +10,7 @@
 
     class App{
 
-        protected $currentController = 'Home';
+        protected $currentController = 'Product';
         protected $currentMethod = 'index';
         protected $params = [];
 

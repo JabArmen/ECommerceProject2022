@@ -10,3 +10,4 @@ class Home extends Controller
         $this->view('Home/home');
     }
 }
+?>

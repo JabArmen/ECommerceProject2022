@@ -11,6 +11,7 @@ class Login extends Controller
     public function index()
     {
         if(!isset($_POST['login'])){
+            
             $this->view('Login/index');
         }
         else{
@@ -30,12 +31,13 @@ class Login extends Controller
                                 $data = [
                                     'msg' => "Welcome, $user->username!",
                                 ];
-                                $this->view('Home/home',$data);
+                                $this->view('Product/home',$data);
                             }
                             else{
                                 $data = [
                                     'msg' => "2FA Code incorect/expired for $user->username",
                                 ];
+                                
                                 $this->view('Login/index',$data); 
                             }
                         }
@@ -43,6 +45,7 @@ class Login extends Controller
                             $data = [
                                 'msg' => "Please enter the 2FA code for $user->username",
                             ];
+                            echo "<script>alert('didn't work);</script>";
                             $this->view('Login/index',$data); 
                         }
                         
@@ -52,7 +55,7 @@ class Login extends Controller
                             $data = [
                                 'msg' => "Welcome, $user->username!",
                             ];
-                            $this->view('Home/home',$data);
+                            $this->view('Product/home',$data);
                     }
                 }
                 else{
@@ -100,7 +103,7 @@ class Login extends Controller
                           <span class="sr-only">Please wait creating the account for '.trim($_POST["username"]).'</span>
                         </div>
                       </div>';
-                        echo '<meta http-equiv="Refresh" content="2; url=/MVC/Login/">';
+                        echo '<meta http-equiv="Refresh" content="2; url=/ECommerceProject2022/Login/">';
                  }
                 } 
             }
@@ -110,7 +113,6 @@ class Login extends Controller
                 ];
                 $this->view('Login/create',$data);
             }
-            
         }
     }
 
@@ -144,6 +146,6 @@ class Login extends Controller
     public function logout(){
         unset($_SESSION['user_id']);
         session_destroy();
-        echo '<meta http-equiv="Refresh" content="1; url=/MVC/Login/">';
+        echo '<meta http-equiv="Refresh" content="1; url=/Product/Login/">';
     }
 }
