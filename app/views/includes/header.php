@@ -28,16 +28,13 @@
     <div class="collapse navbar-collapse" id="mynavbar">
       <ul class="navbar-nav me-auto">
       <li class="nav-item">
-      <a class="nav-link" href="/MVC/Home">Home</a>
+      <a class="nav-link" href="/ECommerceProject2022/Home">Home</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="/MVC/User">User</a>
+      <a class="nav-link" href="/ECommerceProject2022/User">User</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="/MVC/Contact">Contact</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="/MVC/API">API</a>
+      <a class="nav-link" href="/ECommerceProject2022/Contact">Contact</a>
     </li>
 
       </ul>

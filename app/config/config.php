@@ -2,7 +2,7 @@
   // App Root
   define('APPROOT', dirname(dirname(__FILE__)));
   // URL Root
-  define('URLROOT', 'http://localhost/MVC');
+  define('URLROOT', 'http://localhost/ECommerceProject2022');
   // Site Name
   define('SITENAME', '420-411-VA: PHP MVC Application');
 
