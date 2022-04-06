@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 06, 2022 at 02:52 AM
+-- Generation Time: Apr 06, 2022 at 08:46 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -41,7 +41,8 @@ CREATE TABLE `credentials` (
 INSERT INTO `credentials` (`id`, `username`, `pass_hash`, `secret`) VALUES
 (14, 'parth', '$2y$10$JPG.qKXQmaM8hlgLE06zDO21LMPEdWfNH6xfHLDMCm9J6IoIT1d.G', '6YWCH5BFI6VT2L2L'),
 (15, 'asdf', '$2y$10$nfm4yLXRAH9laZlkPZ/EQeZw6SYndmLKr7H1lslpfmpyzabk6S0lq', 'HBW2RS7VRNVSNJK4'),
-(17, 'test', '$2y$10$wKNtCDdBBsUOStfsj4wKKOEZ7Fr/ogG0GGhgGj.kR7u2t2ilQVQGe', 'YLSGGL35JZAEZL7V');
+(17, 'test', '$2y$10$wKNtCDdBBsUOStfsj4wKKOEZ7Fr/ogG0GGhgGj.kR7u2t2ilQVQGe', 'YLSGGL35JZAEZL7V'),
+(18, 'armenj', '$2y$10$7ULaF.czfy5HepwxJ7IB4OF7inL8RVYwWstjh1eUL0yWm/bolb/uu', 'OPOYVJOE5MQKHFSJ');
 
 -- --------------------------------------------------------
 
@@ -120,7 +121,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `credentials`
 --
 ALTER TABLE `credentials`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `product`

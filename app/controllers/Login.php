@@ -45,7 +45,7 @@ class Login extends Controller
                                 $data = [
                                     'msg' => "Welcome, $user->username!",
                                 ];
-                                $this->view('Product/home',$data);
+                                header("Location: ".URLROOT.'/Product/index');
                             }
                             else{
                                 $data = [
@@ -69,7 +69,7 @@ class Login extends Controller
                             $data = [
                                 'msg' => "Welcome, $user->username!",
                             ];
-                            $this->view('Product/home',$data);
+                            header("Location: ".URLROOT.'/Product/index');
                     }
                 }
                 else{
@@ -155,7 +155,9 @@ class Login extends Controller
 
     public function logout(){
         unset($_SESSION['user_id']);
+        unset($_SESSION['user_username']);
+        unset($_SESSION['cart_products']);
         session_destroy();
-        echo '<meta http-equiv="Refresh" content="1; url=/Product/Login/">';
+        echo '<meta http-equiv="Refresh" content="1; url='.URLROOT.'/Product/Login/">';
     }
 }

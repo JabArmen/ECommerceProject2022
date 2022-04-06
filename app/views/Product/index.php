@@ -56,7 +56,7 @@
                     echo("<li><i class='fa fa-star'></i></li>");
                     echo("<li><i class='fa fa-star'></i></li>");
                   echo("</ul>");
-                  echo("<span><a href='#'><button class='btn btn-danger'>Add to cart</button></a></span>");
+                  echo("<span><a href='".URLROOT."/Product/addCart/".$item->product_id."'><button class='btn btn-danger'>Add to cart</button></a></span>");
                 echo("</div>");
               echo("</div>");
             echo("</div>");
