@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 05, 2022 at 06:04 PM
+-- Generation Time: Apr 06, 2022 at 02:52 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -57,6 +57,16 @@ CREATE TABLE `product` (
   `rating` int(11) NOT NULL,
   `image` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`product_id`, `name`, `price`, `description`, `rating`, `image`) VALUES
+(1, 'Test', '9999.99', 'test item', 0, ''),
+(6, 'Test 1', '9999.99', 'test item 1', 0, ''),
+(7, 'Test 2', '9999.99', 'test item 2', 0, ''),
+(8, 'Test 3', '9999.99', 'test item 3', 0, '');
 
 -- --------------------------------------------------------
 
@@ -116,7 +126,7 @@ ALTER TABLE `credentials`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `users`

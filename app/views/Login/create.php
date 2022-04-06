@@ -4,7 +4,10 @@
   <section class="vh-100">
   <div class="container-fluid h-custom">
     <div class="row d-flex justify-content-center align-items-center h-100">
-      
+      <!-- hack -->
+      <div class="mt-5"></div>
+      <div class="mt-5"></div>
+      <!-- end hack -->
       <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
         <form method="post" action="">
           <h1>Register</h1>

@@ -1,56 +1,61 @@
-<html lang="en">
+<!DOCTYPE html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/style.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  
-  <title><?php echo SITENAME; ?></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+  <title><?php echo URLROOT; ?></title>
+
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+
+
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/fontawesome.css">
+  <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/templatemo-sixteen.css">
+  <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/owl.css">
+
 </head>
 
 <body>
 
-  <div class="container">
 
-  
+  <!-- Header -->
+  <header class="">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="<?php echo URLROOT;?>/product/index">
+          <h2>Sussy<em>Keychains</em></h2>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="<?php echo URLROOT;?>/product/index">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<?php echo URLROOT;?>/product/index">Our Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<?php echo URLROOT;?>/login/index">Login / Register</a>
+            </li>
 
+            <!-- TODO: if admin account: admin panel -->
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact Us</a>
+            </li> -->
 
-<nav class="navbar navbar-expand-sm navbar-light bg-light">
-  <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="mynavbar">
-      <ul class="navbar-nav me-auto">
-      <li class="nav-item">
-      <a class="nav-link" href="/ECommerceProject2022/Home">Home</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="/ECommerceProject2022/User">User</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="/ECommerceProject2022/Contact">Contact</a>
-    </li>
-
-      </ul>
-    
-    <ul class="nav navbar-nav navbar-right">
-    <?php
-    if (isLoggedIn()) {
-      echo '<li class="nav-item"><a class="nav-link" href="/ECommerceProject2022/TwoFA/Setup"><i class="fa fa-key" aria-hidden="true"></i> 2FA </a></li>';
-      echo '<li class="nav-item"><a class="nav-link" href="/ECommerceProject2022/Login/logout"><i class="fa-solid fa-sign-out"></i> Logout  '. $_SESSION['user_username'].'</a></li>';
-    } 
-    else {
-      echo '<li class="nav-item"><a class="nav-link" href="/ECommerceProject2022/Login/Create"><i class="fa-solid fa-user-plus"></i> Sign Up</a></li>
-          <li class="nav-item"><a class="nav-link" href="/ECommerceProject2022/Login/"><i class="fa-solid fa-right-to-bracket"></i> Login</a></li>';
-    }
-    ?>
-  </ul>
-    </div>
-  </div>
-</nav>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
