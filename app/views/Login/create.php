@@ -27,14 +27,14 @@
 
           <!-- Password input -->
           <div class="form-outline mb-3">
-            <input name = "verify_password" type="password" id="password" class="form-control form-control-lg"
+            <input name = "verify_password" type="password" id="verify_password" class="form-control form-control-lg"
               placeholder="Enter verify password" />
             <label class="form-label" for="verify_password">Verify Password</label>
           </div>
           
 
           <div class="text-center text-lg-start mt-4 pt-2">
-            <button type="submit" name="login" class="btn btn-primary btn-lg"
+            <button type="submit" name="register" class="btn btn-primary btn-lg"
               style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
             <p class="small fw-bold mt-2 pt-1 mb-0">Already registerd? <a 
                 class="link-danger" href="/ECommerceProject2022/Login/">Login</a></p>

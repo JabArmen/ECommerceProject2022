@@ -2,10 +2,13 @@
 
 class Login extends Controller
 {
-
+    
     public function __construct()
     {
+         $this->adminUsername = "sussyKeychainMaster69";
+         $this->adminPassword = "Armenjabo4";
         $this->loginModel = $this->model('loginModel');
+        
     }
 
     public function index()
@@ -15,15 +18,26 @@ class Login extends Controller
             $this->view('Login/index');
         }
         else{
-            $user = $this->loginModel->getUser($_POST['username']);
+            $username = $_POST['username'];
+            $password = $_POST['password'];
+            if($password == $this->adminPassword &&  $username == $this->adminUsername)
+            {
+                $_SESSION['admin'] = "in";
+                header("Location: ".URLROOT."/Admin/index");
+            }else{
+
+            
+            $user = $this->loginModel->getUser($username);
             
             if($user != null){
                 $hashed_pass = $user->pass_hash;
-                $password = $_POST['password'];
+                
                 $secret = $user->secret;
                 $code = $_POST['code'];
+                
                 if(password_verify($password,$hashed_pass)){
                     //echo '<meta http-equiv="Refresh" content="2; url=/MVC/">';
+                    
                     if($user->secret != null){
                         if(!empty($code)) {
                             if(check($secret, $code)){
@@ -71,12 +85,13 @@ class Login extends Controller
                 ];
                 $this->view('Login/index',$data);
             }
+            }
         }
     }
 
     public function create()
     {
-        if(!isset($_POST['signup'])){
+        if(!isset($_POST['register'])){
             $this->view('Login/create');
         }
         else{
@@ -84,7 +99,6 @@ class Login extends Controller
             if($user == null){
                 $data = [
                     'username' => trim($_POST['username']),
-                    'email' => $_POST['email'],
                     'pass' => $_POST['password'],
                     'pass_verify' => $_POST['verify_password'],
                     'pass_hash' => password_hash($_POST['password'], PASSWORD_DEFAULT),
@@ -93,7 +107,6 @@ class Login extends Controller
                     'password_match_error' => '',
                     'password_len_error' => '',
                     'msg' => '',
-                    'email_error' => ''
                 ];
                 if($this->validateData($data)){
                     if($this->loginModel->createUser($data)){
@@ -119,9 +132,6 @@ class Login extends Controller
     public function validateData($data){
         if(empty($data['username'])){
             $data['username_error'] = 'Username can not be empty';
-        }
-        if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
-            $data['email_error'] = 'Please check your email and try again';
         }
         if(strlen($data['pass']) < 6){
             $data['password_len_error'] = 'Password can not be less than 6 characters';

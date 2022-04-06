@@ -14,6 +14,7 @@
       <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
         <form method="post" action="">
           <h1>Login</h1>
+          <br>
           <div class="form-outline mb-4">
             <input name="username" type="text" id="username" class="form-control form-control-lg" placeholder="Enter a valid username" />
             <label class="form-label" for="username">Username</label>
@@ -32,7 +33,7 @@
 
 
           <div class="text-center text-lg-start mt-4 pt-2">
-            <button type="submit" name="register" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+            <button type="submit" name="login" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
             <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a class="link-danger" href="/ECommerceProject2022/Login/Create">Register</a></p>
           </div>
           <?php
