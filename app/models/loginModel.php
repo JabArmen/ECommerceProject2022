@@ -5,6 +5,12 @@
             $this->db = new Model;
         }
     
+
+        public function getUsers(){
+            $this->db->query("SELECT * FROM credentials");
+            return $this->db->getgetResultSet();
+        }
+
         public function getUser($username){
             $this->db->query("SELECT * FROM credentials WHERE username = :username");
             $this->db->bind(':username',$username);
@@ -25,7 +31,16 @@
             }
 
         }
-
+        public function deleteUser($username){
+            $this->db->query("DELETE FROM credentials WHERE username = :username;");
+            $this->db->bind(':username', $username);
+            if($this->db->execute()){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
         public function updateUser($data){
             $this->db->query("UPDATE credentials SET secret = :secret WHERE id = :userid");
             $this->db->bind(':userid', $_SESSION['user_id']);

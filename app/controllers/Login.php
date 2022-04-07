@@ -36,7 +36,6 @@ class Login extends Controller
                 $code = $_POST['code'];
                 
                 if(password_verify($password,$hashed_pass)){
-                    //echo '<meta http-equiv="Refresh" content="2; url=/MVC/">';
                     
                     if($user->secret != null){
                         if(!empty($code)) {

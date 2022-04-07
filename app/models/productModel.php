@@ -16,7 +16,7 @@
         }
 
         public function createProduct($data){
-            $this->db->query("INSERT INTO product (Name, City, Phone, Picture) values (:name, :description, :price, :image, :rating)");
+            $this->db->query("INSERT INTO product (name, description, price, image, rating) values (:name, :description, :price, :image, :rating)");
             $this->db->bind(':name', $data['name']);
             $this->db->bind(':description', $data['description']);
             $this->db->bind(':price', $data['price']);
@@ -50,9 +50,9 @@
 
         }
 
-        public function delete($data){
+        public function delete($product_id){
             $this->db->query("DELETE FROM product WHERE product_id=:product_id");
-            $this->db->bind('product_id', $data['product_id']);
+            $this->db->bind('product_id', $product_id);
 
             if($this->db->execute()){
                 return true;
