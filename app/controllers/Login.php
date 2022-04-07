@@ -153,10 +153,15 @@ class Login extends Controller
     }
 
     public function logout(){
-        unset($_SESSION['user_id']);
-        unset($_SESSION['user_username']);
-        unset($_SESSION['cart_products']);
-        session_destroy();
-        echo '<meta http-equiv="Refresh" content="1; url='.URLROOT.'/Product/Login/">';
+        $user = $this->loginModel->getUser($_SESSION['user_username']);
+        if($user->secret === null)  {
+            echo '<meta http-equiv="Refresh" content="1; url='.URLROOT.'/TwoFA/Setup/">';
+        }else {
+            unset($_SESSION['user_id']);
+            unset($_SESSION['user_username']);
+            unset($_SESSION['cart_products']);
+            session_destroy();
+            echo '<meta http-equiv="Refresh" content="1; url='.URLROOT.'/Product/Login/">';
+        }
     }
 }

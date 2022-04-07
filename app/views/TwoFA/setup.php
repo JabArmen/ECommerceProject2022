@@ -1,7 +1,7 @@
 <?php require APPROOT . '/views/includes/header.php';  ?>
-
+<br><br>
 <div class="jumbotron m-5">
-  <h1 class="display-6 text-center m-5">Please scan the following QRcode <i class="fa fa-qrcode" aria-hidden="true"></i>
+  <h1 class="display-6 text-center m-5 text-danger "><em>Important: </em><br>Please scan the QRcode <i class="fa fa-qrcode" aria-hidden="true"></i>
 </h1>
 
   <?php

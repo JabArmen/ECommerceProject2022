@@ -35,16 +35,20 @@
 
           <div class="text-center text-lg-start mt-4 pt-2">
             <button type="submit" name="register" class="btn btn-primary btn-lg"
-              style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+              style="padding-left: 2.5rem; padding-right: 2.5rem;">Register</button>
             <p class="small fw-bold mt-2 pt-1 mb-0">Already registerd? <a 
                 class="link-danger" href="/ECommerceProject2022/Login/">Login</a></p>
           </div>
           <?php
 
 if($data != []){
+  foreach($data as $key => $value){
+  if (str_contains($key,'err') && $value != ''){
     echo '<div class="alert alert-danger" role="alert">'.
-        $data['msg'].'
+        $value.'
     </div>';
+}
+  }
 }
 
 ?>

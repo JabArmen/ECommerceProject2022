@@ -34,7 +34,7 @@ class Admin extends Controller
            
             if($this->productModel->createProduct($data)){
                 echo 'Adding the product...';
-                header("Location: /Admin/");
+                header("Location: ".URLROOT."/Admin/");
             }
 
         }} else {
@@ -59,7 +59,7 @@ class Admin extends Controller
             ];
             if($this->productModel->updateProduct($data)){
                 echo 'Updating the product...';
-                header("Location: /Admin/");
+                header("Location: ".URLROOT."/Admin/");
             }
             
             }
@@ -111,7 +111,7 @@ class Admin extends Controller
     public function user(){
         if(isset($_SESSION['admin'])) {
             $data = [
-                $products => $this->productModel->getUsers()
+                'user' => $this->loginModel->getUsers()
             ];
             $this->view('Admin/user',$data);
         } else {

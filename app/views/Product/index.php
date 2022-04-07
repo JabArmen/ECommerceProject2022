@@ -6,20 +6,14 @@
     <div class="owl-banner owl-carousel">
       <div class="banner-item-01">
         <div class="text-content">
-          <h4>Best Offer</h4>
-          <h2>New Arrivals On Sale</h2>
+          <h4>Sussy Keychains</h4>
+          <h2>Sussiest Keychains on the market</h2>
         </div>
       </div>
       <div class="banner-item-02">
         <div class="text-content">
-          <h4>Flash Deals</h4>
+          <h4>Stay sus or get ejected</h4>
           <h2>Get your best products</h2>
-        </div>
-      </div>
-      <div class="banner-item-03">
-        <div class="text-content">
-          <h4>Last Minute</h4>
-          <h2>Grab last minute deals</h2>
         </div>
       </div>
     </div>
@@ -56,8 +50,12 @@
                     echo("<li><i class='fa fa-star'></i></li>");
                     echo("<li><i class='fa fa-star'></i></li>");
                   echo("</ul>");
-                  echo("<span><a href='".URLROOT."/Product/addCart/".$item->product_id."'><button class='btn btn-danger'>Add to cart</button></a></span>");
-                echo("</div>");
+                  if(isLoggedIn()) {
+                    echo("<span><a href='".URLROOT."/Product/addCart/".$item->product_id."'><button class='btn btn-danger'>Add to cart</button></a></span>");
+                  } else {
+                    echo("<span><a href='".URLROOT."/Login/".$item->product_id."'><button class='btn btn-danger'>Add to cart</button></a></span>");
+                  }
+                    echo("</div>");
               echo("</div>");
             echo("</div>");
           }
