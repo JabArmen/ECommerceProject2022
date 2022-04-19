@@ -4,9 +4,9 @@
 
    2) First time logging out prompting the user with 2FA page  
 
-   3) User Display **TO DO** 
+   3) User Display  
 
-   4) User Delete **TO DO** 
+   4) User Delete 
 
    5) Calculate individual product price 
 
