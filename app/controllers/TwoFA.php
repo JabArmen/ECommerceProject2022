@@ -43,6 +43,24 @@ class TwoFA extends Controller
     }
   
 
+    public function SetupAdmin()
+    {
+        if(isset($_SESSION['admin'])) {
+            $g = new \Google\Authenticator\GoogleAuthenticator();
+        
+            //the "getUrl" method takes as a parameter: "username", "host" and the key "secret"
+        
+            $qrcode = '<img src="'.$g->getURL('Admin', 'localhost', "YLSGGL35JZAEZLVV").'" class="rounded mx-auto d-block"/>';
+                $data = [
+                    'qrcode' =>  $qrcode
+                ];
+                $this->view('TwoFA/setup', $data);
+        }else{
+            echo 'Access Denied';
+        }
+        
+    }
+
     public function Setup()
     {
         $user = $this->loginModel->getUser($_SESSION['user_username']);

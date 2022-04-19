@@ -7,6 +7,7 @@ class Login extends Controller
     {
          $this->adminUsername = "sussyKeychainMaster69";
          $this->adminPassword = "Armenjabo4";
+         $this->adminSecret = "YLSGGL35JZAEZLVV";
         $this->loginModel = $this->model('loginModel');
         
     }
@@ -20,11 +21,14 @@ class Login extends Controller
         else{
             $username = $_POST['username'];
             $password = $_POST['password'];
-            if($password == $this->adminPassword &&  $username == $this->adminUsername)
-            {
+            $code = $_POST['code'];
+            if($password == $this->adminPassword &&  $username == $this->adminUsername && check($this->adminSecret, $code))
+            {   
+                
                 $_SESSION['admin'] = "in";
                 header("Location: ".URLROOT."/Admin/index");
-            }else{
+                
+            } else{
 
             
             $user = $this->loginModel->getUser($username);
@@ -33,7 +37,7 @@ class Login extends Controller
                 $hashed_pass = $user->pass_hash;
                 
                 $secret = $user->secret;
-                $code = $_POST['code'];
+                
                 
                 if(password_verify($password,$hashed_pass)){
                     

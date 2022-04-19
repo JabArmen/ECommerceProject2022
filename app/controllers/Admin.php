@@ -111,7 +111,7 @@ class Admin extends Controller
     public function user(){
         if(isset($_SESSION['admin'])) {
             $data = [
-                'user' => $this->loginModel->getUsers()
+                'users' => $this->loginModel->getUsers()
             ];
             $this->view('Admin/user',$data);
         } else {

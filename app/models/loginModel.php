@@ -8,7 +8,7 @@
 
         public function getUsers(){
             $this->db->query("SELECT * FROM credentials");
-            return $this->db->getgetResultSet();
+            return $this->db->getResultSet();
         }
 
         public function getUser($username){

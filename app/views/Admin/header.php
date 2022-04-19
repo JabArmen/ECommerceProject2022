@@ -45,7 +45,6 @@
             <li class="nav-item">
               <a class="nav-link" href="/ECommerceProject2022/Admin/user">Users</a>
               </li>
-              
           </ul>
           
         </div>
@@ -53,7 +52,7 @@
     
     
       
-      <li class="nav-item"><a class="nav-link" ><i class="fa fa-key" aria-hidden="true"></i> 2FA </a></li>';
+      <li class="nav-item"><a class="nav-link"  href="/ECommerceProject2022/TwoFA/setupAdmin"><i class="fa fa-key" aria-hidden="true"></i> 2FA </a></li>';
       <li class="nav-item"><a class="nav-link" href="/ECommerceProject2022/Admin/logout"><i class="fa-solid fa-sign-out"></i> Logout </a></li>
     
   </ul>
