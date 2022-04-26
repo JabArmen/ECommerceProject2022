@@ -24,6 +24,7 @@ class Product extends Controller
         header("Location: ".URLROOT."/Product/index");
     }
 
+    
     public function decrementProduct($product_id){
         if( $_SESSION['cart_products'][$product_id]>1){
             $_SESSION['cart_products'][$product_id] = $_SESSION['cart_products'][$product_id]-1;

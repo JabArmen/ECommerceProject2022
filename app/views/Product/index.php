@@ -27,22 +27,45 @@
           <div class="section-heading">
             <h2>Latest Products</h2>
             <a href="products.html">view all products <i class="fa fa-angle-right"></i></a>
-          </div>
-        </div>
+            <span class = "d-flex justify-content-center">
+            <form action='' method='post' enctype="multipart/form-data">
+                <input type="search" id="site-search" name="title" placeholder = "Search...">
+                <button type = "submit" name = "search" class='btn btn-danger'><i class="fa fa-search"></i></button>
+              </form>
+            </span>
 
+          </div>
+
+        </div>
+            
+
+
+
+                    
+
+
+
+            
         <!-- Product Tile -->
         <?php
-          $i = 0;
           foreach ($data as $item) {
+            if(isset($_POST['search'])) {
+              if(strpos(strtolower($item->name), strtolower($_POST['title'])) !== false) {
+                displayProduct($item);
+              }
+            } else {
+              displayProduct($item);
+            }
+          }
+          function displayProduct($item) {
             echo("<div class='col-md-4'>");
               echo("<div class='product-item'>");
-                echo("<a href='#'><img src='".URLROOT."/images/product_01.jpg' alt=''></a>");
+                echo("<a href='#' data-bs-toggle='modal' data-bs-target='#imgView".$item->product_id."'><img src='".URLROOT."/images/product_01.jpg' alt=''></a>");
                 echo("<div class='down-content'>");
-                  echo("<a href='#'>");
+                  echo("<a href='#' data-bs-toggle='modal' data-bs-target='#imgView".$item->product_id."'>");
                     echo("<h4>$item->name</h4>");
                   echo("</a>");
                   echo("<h6>$$item->price</h6>");
-                  echo("<p>$item->description</p>");
                   echo("<ul class='stars'>");
                     echo("<li><i class='fa fa-star'></i></li>");
                     echo("<li><i class='fa fa-star'></i></li>");
@@ -58,12 +81,17 @@
                     echo("</div>");
               echo("</div>");
             echo("</div>");
+            
+          }
+          foreach ($data as $item) {
+            require APPROOT . '/views/Product/modal.php';
           }
         ?>
 
       </div>
     </div>
   </div>
+                
 
   <div class="best-features">
     <div class="container">

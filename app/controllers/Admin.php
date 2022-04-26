@@ -79,34 +79,7 @@ class Admin extends Controller
             echo 'Access denied';
         }
     }
-    public function imageUpload(){
-        //default value for the picture
-        $filename=false;
-        
-        //save the file that gets sent as a picture
-        $file = $_FILES['picture'];
-        
-        $acceptedTypes = ['image/jpeg'=>'jpg',
-            'image/gif'=>'gif',
-            'image/png'=>'png'];
-        //validate the file
-        
-        if(empty($file['tmp_name']))
-            return false;
-
-        $fileData = getimagesize($file['tmp_name']);
-
-        if($fileData!=false && 
-            in_array($fileData['mime'],array_keys($acceptedTypes))){
-
-            //save the file to its permanent location
-                
-            $folder = dirname(APPROOT).'/public/img';
-            $filename = uniqid() . '.' . $acceptedTypes[$fileData['mime']];
-            move_uploaded_file($file['tmp_name'], "$folder/$filename");
-        }
-        return $filename;
-    }
+    
 
     public function user(){
         if(isset($_SESSION['admin'])) {
@@ -136,5 +109,7 @@ class Admin extends Controller
         session_destroy();
         echo '<meta http-equiv="Refresh" content="1; url='.URLROOT.'/Product/Login/">';
     }
+
+
 }
 ?>

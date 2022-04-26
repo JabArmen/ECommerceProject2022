@@ -10,7 +10,8 @@ class Cart extends Controller
     {
         $this->view('Cart/home',$this->productModel);
     }
-
+    
+    
     
 }
 ?>

@@ -29,3 +29,8 @@
    14) Admin: Product edit 
 
    15) Admin: Product delete 
+
+   16) Search
+
+   17) Pop up product description 
+

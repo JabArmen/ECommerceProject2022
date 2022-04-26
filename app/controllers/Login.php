@@ -29,7 +29,6 @@ class Login extends Controller
                 header("Location: ".URLROOT."/Admin/index");
                 
             } else{
-
             
             $user = $this->loginModel->getUser($username);
             
@@ -168,4 +167,6 @@ class Login extends Controller
             echo '<meta http-equiv="Refresh" content="1; url='.URLROOT.'/Product/Login/">';
         }
     }
+
+    
 }
