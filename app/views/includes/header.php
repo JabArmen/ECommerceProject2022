@@ -20,6 +20,25 @@
   <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/templatemo-sixteen.css">
   <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/owl.css">
 
+  <style>
+
+        div.viewer-bg {
+            position: relative;
+            width: 360px;
+            height: 360px
+        }
+        div.viewer {
+            cursor: move;
+            position: relative;
+            width: 360px;
+            height: 360px;
+            <?php
+            echo "background: rgba(0, 0, 0, 0) url('" . URLROOT . "/images/mogusRotationRed.png') no-repeat scroll -720px 0px / cover;"
+            ?>
+            left: 0px
+        }
+    </style>
+
 </head>
 
 <body>
