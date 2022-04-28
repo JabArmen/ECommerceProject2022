@@ -28,11 +28,17 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `credentials` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) NOT NULL,
   `pass_hash` varchar(255) NOT NULL,
-  `secret` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `secret` varchar(255) DEFAULT NULL,
+  `address` text NOT NULL,
+  `cardnum` text NOT NULL,
+  `card_expiration` text NOT NULL,
+  `card_securitynum` text NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `username` (`username`)
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4
 
 --
 -- Dumping data for table `credentials`

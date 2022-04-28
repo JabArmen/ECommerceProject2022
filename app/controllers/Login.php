@@ -163,6 +163,9 @@ class Login extends Controller
             unset($_SESSION['user_id']);
             unset($_SESSION['user_username']);
             unset($_SESSION['cart_products']);
+            if(isset($_SESSION['validated'])){
+                unset($_SESSION['validated']);
+            }
             session_destroy();
             echo '<meta http-equiv="Refresh" content="1; url='.URLROOT.'/Product/Login/">';
         }

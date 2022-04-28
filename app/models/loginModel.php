@@ -56,6 +56,23 @@
 
         }
 
+        public function editUser($data){
+            $this->db->query("UPDATE credentials SET address = :address, cardnum = :cardnum, 
+            card_expiration = :card_expiration, card_securitynum = :card_securitynum, cardname = :cardname WHERE id = :userid");
+            $this->db->bind(':userid', $_SESSION['user_id']);
+            $this->db->bind(':address', $data['address']);
+            $this->db->bind(':cardnum', $data['cardnum']);
+            $this->db->bind(':card_expiration', $data['card_expiration']);
+            $this->db->bind(':card_securitynum', $data['card_securitynum']);
+            $this->db->bind(':cardname', $data['cardname']);
 
+            if($this->db->execute()){
+                return true;
+            }
+            else{
+                return false;
+            
+            }
+        }
     }
 ?>

@@ -34,3 +34,8 @@
 
    17) Pop up product description 
 
+   18) Edit Info
+   
+   19) Validate password and 2FA
+
+   20) Turning Amongus image

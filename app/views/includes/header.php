@@ -64,7 +64,11 @@
             <li class="nav-item">
               <a class="nav-link" href="/ECommerceProject2022/Product/index">Our Products</a>
               </li>
-              
+              <?php
+                if (isLoggedIn()) {
+                  echo "<li class='nav-item'> <a class='nav-link' href='/ECommerceProject2022/UserInfo/checkPassword'>Edit Info</a> </li>"; 
+                }
+              ?>
           </ul>
           
         </div>
