@@ -13,7 +13,14 @@ include_once dirname(APPROOT).'/vendor/sonata-project/google-authenticator/src/G
           return false;
         }
       }
-
+      function unsetAll(){
+        unset($_SESSION['user_id']);
+            unset($_SESSION['user_username']);
+            unset($_SESSION['cart_products']);
+            if(isset($_SESSION['validated'])){
+                unset($_SESSION['validated']);
+            }
+      }
     function check($secret, $code){
         $g = new \Sonata\GoogleAuthenticator\GoogleAuthenticator();
         if($g->checkCode($secret, $code)){
@@ -52,5 +59,5 @@ include_once dirname(APPROOT).'/vendor/sonata-project/google-authenticator/src/G
       }
       return $filename;
   }
-
+  
 ?>

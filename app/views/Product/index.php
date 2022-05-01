@@ -28,7 +28,18 @@
           <h2>Latest Products</h2>
           <a href="products.html">view all products <i class="fa fa-angle-right"></i></a>
           <span class="d-flex justify-content-center">
+          <form action='' method='post' enctype="multipart/form-data">
+            Minimum: $<output>25</output>
+             <input type="range" name = "min" class="form-range" min = '0' max = '50' oninput="this.previousElementSibling.value = this.value">
+             Maximum: $<output>75</output>
+             <input type="range" name = "max" class="form-range" min = '50' max = '100' oninput="this.previousElementSibling.value = this.value">
+             <button type="submit" name="filter" class='btn btn-danger'>Filter</button>
+             </form>
+              </span>
+          <span class="d-flex justify-content-center">
+          
             <form action='' method='post' enctype="multipart/form-data">
+             
               <input type="search" id="site-search" name="title" placeholder="Search...">
               <button type="submit" name="search" class='btn btn-danger'><i class="fa fa-search"></i></button>
             </form>
@@ -51,6 +62,10 @@
       foreach ($data as $item) {
         if (isset($_POST['search'])) {
           if (strpos(strtolower($item->name), strtolower($_POST['title'])) !== false) {
+            displayProduct($item);
+          }
+        } else if(isset($_POST['filter'])){
+          if (intval($item->price, 10) <= $_POST['max'] && intval($item->price, 10) >= $_POST['min']) {
             displayProduct($item);
           }
         } else {

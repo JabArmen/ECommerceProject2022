@@ -6,9 +6,9 @@ class UserInfo extends Controller
     public function __construct()
     {
         if(!isset($_SESSION['user_id'])){
-            $this->view('Product/index');
+            header("Location: ".URLROOT."/Product/index");
         }
-        $this->loginModel = $this->model('loginModel');
+        $this->loginModel = $this->model('loginModel'); 
     }
 
     public function index()
@@ -111,6 +111,17 @@ class UserInfo extends Controller
                 }
             }
         }
+    }
+
+    public function delete($user_id){
+        $data=[
+            'id' => $user_id
+        ];
+        if($this->loginModel->delete($data)){
+            unsetAll();
+            header("Location: ".URLROOT."/Product/index");
+        }
+
     }
 
     public function validateData($data){

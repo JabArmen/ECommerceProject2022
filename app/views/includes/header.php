@@ -75,10 +75,11 @@
         <ul class="nav navbar-nav navbar-right">
     <?php
     if (isLoggedIn()) {
+      echo '<li class="nav-item"><a class="nav-link" href="#delete" data-bs-toggle="modal" data-bs-target="#"><i class="fa fa-trash" aria-hidden="true"></i> delete</a></li>';
       echo '<li class="nav-item"><a class="nav-link" href="/ECommerceProject2022/Cart/index"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart </a></li>';
       echo '<li class="nav-item"><a class="nav-link" href="/ECommerceProject2022/TwoFA/Setup"><i class="fa fa-key" aria-hidden="true"></i> 2FA </a></li>';
       echo '<li class="nav-item"><a class="nav-link" href="/ECommerceProject2022/Login/logout"><i class="fa-solid fa-sign-out"></i> Logout  '. $_SESSION['user_username'].'</a></li>';
-
+     
     } 
     else {
       echo '<li class="nav-item"><a class="nav-link" href="/ECommerceProject2022/Login/Create"><i class="fa-solid fa-user-plus"></i> Sign Up</a></li>
@@ -86,6 +87,12 @@
     }
     ?>
   </ul>
+  
       </div>
     </nav>
+    <?php 
+      if (isLoggedIn()) {
+          include APPROOT . '/views/includes/modal.php';
+      }
+    ?>
   </header>

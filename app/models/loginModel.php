@@ -74,5 +74,18 @@
             
             }
         }
+
+        public function delete($data){
+            $this->db->query("DELETE FROM credentials WHERE id=:id");
+            $this->db->bind('id',$data['id']);
+
+            if($this->db->execute()){
+                return true;
+            }
+            else{
+                return false;
+            }
+
+        }
     }
 ?>

@@ -36,6 +36,10 @@
 
    18) Edit Info
    
-   19) Validate password and 2FA
+   19) Validate password and 2FA *EXTRA* Pop up delete account *EXTRA*
 
    20) Turning Amongus image
+
+   21) Delete Account
+
+   22) Filter price
