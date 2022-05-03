@@ -1,5 +1,11 @@
 <?php require APPROOT . '/views/includes/header.php';
+
 ?>
+
+<?php
+  if($_SESSION['theme'] == 'dark-theme'){
+    echo '<link rel="stylesheet" href="http://localhost/ECommerceProject2022/css/style.css">';
+  }?>
 <!-- Page Content -->
 <!-- Banner Starts Here -->
 <div class="banner header-text">
@@ -107,7 +113,6 @@
   </div>
 </div>
 
-
 <div class="best-features">
   <div class="container">
     <div class="row">
@@ -119,7 +124,7 @@
       <div class="col-md-6">
         <div class="left-content">
           <h4>Looking for the best products?</h4>
-          <p>We sell sus keychains of everyone's favourite crewmates.</p>
+          <p class="para">We sell sus keychains of everyone's favourite crewmates.</p>
           <ul class="featured-list">
             <li>Play with our keychains here!</li>
             <li>Click and drag to rotate the keychain.</li>
@@ -156,6 +161,7 @@
     </div>
   </div>
 </div>
+     
 
 <script>
   var scrollValues = [-1440/2, -2160/2, -2880/2, -3600/2, -4320/2, -5040/2, 0, -720/2];
