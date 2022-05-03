@@ -49,5 +49,3 @@
    24) Popup showing cart summary while hovering over Cart icon
    
    25) Change theme option in the footer
-   
-   26) newsletter popup

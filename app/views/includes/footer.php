@@ -9,6 +9,7 @@
                     <p class="para">Among Us is &copy; 2018-2021 Innersloth LLC</p>
                 </div>
 
+                <button><a href="http://localhost/ECommerceProject2022/Product/theme">Change Theme</a></button>
             </div>
 
         </div>
