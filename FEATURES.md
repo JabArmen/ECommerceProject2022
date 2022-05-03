@@ -43,3 +43,11 @@
    21) Delete Account
 
    22) Filter price
+   
+   23) Amount of items in cart showed in navbar
+   
+   24) Popup showing cart summary while hovering over Cart icon
+   
+   25) Change theme option in the footer
+   
+   26) newsletter popup

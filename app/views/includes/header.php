@@ -20,6 +20,8 @@
   <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/templatemo-sixteen.css">
   <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/owl.css">
 
+  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <style>
 
         div.viewer-bg {
@@ -27,6 +29,45 @@
             width: 360px;
             height: 360px
         }
+        
+        #tooltip {
+          position: relative;
+          cursor:pointer;
+        }
+        #tooltipText {
+          height: fit-content;
+          width: fit-content;
+          position:absolute;
+          left:50%;
+          bottom:0;
+          transform: translateX(-50%);
+          background-color: #fff;
+          color: #fff;
+          white-space: nowrap;
+          padding: 10px 15px;
+          border-radius: 7px;
+          visibility: hidden;
+          opacity: 0;
+          transition: opacity 3s ease;
+          margin-top: 50px;
+        }
+        #tooltipText :: before{
+          content:"";
+          position: absolute;
+          left: 50%;
+          bottom: 100%;
+          transform: translateX(-50%);
+          border: 15px solid;
+          border-color: #fff #fff #fff #fff;
+        }
+
+        #tooltip:hover #tooltipText{
+          top: 30%;
+          visibility: visible;
+          opacity: 1;
+          color:black;
+        }
+
         div.viewer {
             cursor: move;
             position: relative;
@@ -37,6 +78,7 @@
             ?>
             left: 0px
         }
+        
     </style>
 
 </head>
@@ -76,10 +118,29 @@
     <?php
     if (isLoggedIn()) {
       echo '<li class="nav-item"><a class="nav-link" href="#delete" data-bs-toggle="modal" data-bs-target="#"><i class="fa fa-trash" aria-hidden="true"></i> delete</a></li>';
-      echo '<li class="nav-item"><a class="nav-link" href="/ECommerceProject2022/Cart/index"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart </a></li>';
-      echo '<li class="nav-item"><a class="nav-link" href="/ECommerceProject2022/TwoFA/Setup"><i class="fa fa-key" aria-hidden="true"></i> 2FA </a></li>';
-      echo '<li class="nav-item"><a class="nav-link" href="/ECommerceProject2022/Login/logout"><i class="fa-solid fa-sign-out"></i> Logout  '. $_SESSION['user_username'].'</a></li>';
-     
+      echo '<div id="tooltip"><li class="nav-item"><a class="nav-link" href="/ECommerceProject2022/Cart/index"><i class="fa fa-shopping-cart" aria-hidden="true"></i>';
+            if (!isset($_SESSION['cart_products'])) {
+              echo 'Cart';
+            } 
+            else {
+              $count = 0;
+              for($num = 0; $num <100; $num+=1){
+                if (isset($_SESSION['cart_products'][$num]))
+                  $count += $_SESSION['cart_products'][$num];
+              } 
+              echo ' '.$count.' items in your cart!';
+            
+            echo '</a></li><ul id="tooltipText"><h5> Cart Summary</h5>';
+            $this->productModel = $this->model('productModel');
+            for($num = 0; $num <100; $num+=1){
+              if (isset($_SESSION['cart_products'][$num]))
+                echo '<li>'.$this->productModel->getProduct($num)->name.' x'.$_SESSION['cart_products'][$num].'</li>';
+            } 
+            echo '</ul>';
+            }
+            echo '</div><li class="nav-item"><a class="nav-link" href="/ECommerceProject2022/TwoFA/Setup"><i class="fa fa-key" aria-hidden="true"></i> 2FA </a></li>';
+            echo '<li class="nav-item"><a class="nav-link" href="/ECommerceProject2022/Login/logout"><i class="fa-solid fa-sign-out"></i> Logout  ' . $_SESSION['user_username'] . '</a></li>';
+            
     } 
     else {
       echo '<li class="nav-item"><a class="nav-link" href="/ECommerceProject2022/Login/Create"><i class="fa-solid fa-user-plus"></i> Sign Up</a></li>

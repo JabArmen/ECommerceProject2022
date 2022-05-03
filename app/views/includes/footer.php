@@ -3,12 +3,14 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="inner-content">
-                    <p>2022 Team SussyKeychains
+                    <p class="para">2022 Team SussyKeychains
 
                         - Armen Jabamikos | Gevorg Markarov | Devrin Aiden Tiongson</a></p>
-                    <p>Among Us is &copy; 2018-2021 Innersloth LLC</p>
+                    <p class="para">Among Us is &copy; 2018-2021 Innersloth LLC</p>
                 </div>
+
             </div>
+
         </div>
     </div>
 </footer>
