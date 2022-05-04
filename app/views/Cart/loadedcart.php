@@ -63,7 +63,7 @@ foreach ($_SESSION['cart_products'] as $pkey => $quantity) {
                 <li><span>Shipping</span> <span>Free</span></li>
                 <li><span><strong>Total</strong></span> <span><strong><?php echo $totalprice; ?></strong></span></li>
             </ul>
-            <a href="checkout.html" class="btn karl-checkout-btn">Proceed to checkout</a>
+            <a href="/ECommerceProject2022/Cart/address" class="btn karl-checkout-btn">Proceed to checkout</a>
         </div>
     </div>
 </div>

@@ -4,7 +4,7 @@ class Product extends Controller
     public function __construct()
     {
         $this->productModel = $this->model('productModel');
-
+        
         if (!isset($_SESSION['theme'])) {
             $_SESSION['theme'] = 'light-theme';
         }

@@ -36,7 +36,7 @@
 
    18) Edit Info
    
-   19) Validate password and 2FA *EXTRA* Pop up delete account *EXTRA*
+   19)  Pop up delete account 
 
    20) Turning Amongus image
 
@@ -49,3 +49,13 @@
    24) Popup showing cart summary while hovering over Cart icon
    
    25) Change theme option in the footer
+
+   26) GIthub popup
+
+   27) Paypal
+
+   28) Address confirmation
+
+   29) Credit card
+
+   30) Armen's thing

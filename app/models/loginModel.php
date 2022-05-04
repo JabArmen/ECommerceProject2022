@@ -75,6 +75,38 @@
             }
         }
 
+        public function editCreditCard($data){
+            $this->db->query("UPDATE credentials SET  cardnum = :cardnum, 
+            card_expiration = :card_expiration, card_securitynum = :card_securitynum, cardname = :cardname WHERE id = :userid");
+            $this->db->bind(':userid', $_SESSION['user_id']);
+            $this->db->bind(':cardnum', $data['cardnum']);
+            $this->db->bind(':card_expiration', $data['card_expiration']);
+            $this->db->bind(':card_securitynum', $data['card_securitynum']);
+            $this->db->bind(':cardname', $data['cardname']);
+
+            if($this->db->execute()){
+                return true;
+            }
+            else{
+                return false;
+            
+            }
+        }
+
+        public function editAddress($address){
+            $this->db->query("UPDATE credentials SET address = :address WHERE id = :userid");
+            $this->db->bind(':userid', $_SESSION['user_id']);
+            $this->db->bind(':address', $address);
+
+            if($this->db->execute()){
+                return true;
+            }
+            else{
+                return false;
+            
+            }
+        }
+
         public function delete($data){
             $this->db->query("DELETE FROM credentials WHERE id=:id");
             $this->db->bind('id',$data['id']);
