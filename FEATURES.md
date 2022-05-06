@@ -50,12 +50,12 @@
    
    25) Change theme option in the footer
 
-   26) GIthub popup
+   26) GIthub popup 3 seconds after you first land on the home page
 
    27) Paypal
 
-   28) Address confirmation
+   28) Address confirmation info
 
-   29) Credit card
+   29) Credit card info
 
-   30) Armen's thing
+   30) API call to Urban dictionary to show the definition of the word 'sussy'
