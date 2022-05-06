@@ -23,13 +23,13 @@ class Admin extends Controller
             $this->view('Admin/addProduct');
         }
         else{
-            // $filename= $this->imageUpload();
+            $filename= imageUpload();
             $data=[
                 'name' => $_POST['name'],
                 'price' => $_POST['price'],
                 'description' => $_POST['description'],
                 'rating' => 0,
-                'image' => ""
+                'image' => $filename
             ];
            
             if($this->productModel->createProduct($data)){
@@ -41,6 +41,8 @@ class Admin extends Controller
             echo 'Access denied';
         }
     }
+
+
     public function updateProduct($product_id){
         if(isset($_SESSION['admin'])) {
         $product = $this->productModel->getProduct($product_id);
@@ -48,13 +50,13 @@ class Admin extends Controller
                 $this->view('Admin/updateProduct',$product);
             }
             else{
-            // $filename= $this->imageUpload();
+            $filename= imageUpload();
             $data=[
                 'name' => $_POST['name'],
                 'price' => $_POST['price'],
                 'description' => $_POST['description'],
                 'rating' => 0,
-                'image' => "",
+                'image' => $filename,
                 'product_id' => $product_id
             ];
             if($this->productModel->updateProduct($data)){

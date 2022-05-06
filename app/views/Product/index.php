@@ -31,7 +31,7 @@ if ($_SESSION['theme'] == 'dark-theme') {
     <div class="row">
       <div class="col-md-12">
         <div class="section-heading">
-          <h2>Latest Products</h2>
+          <h2 id="apicall">Latest Products</h2>
           <a href="products.html">view all products <i class="fa fa-angle-right"></i></a>
           <span class="d-flex justify-content-center">
             <form action='' method='post' enctype="multipart/form-data">
@@ -82,12 +82,12 @@ if ($_SESSION['theme'] == 'dark-theme') {
       {
         echo ("<div class='col-md-4'>");
         echo ("<div class='product-item'>");
-        echo ("<a href='#' data-bs-toggle='modal' data-bs-target='#imgView" . $item->product_id . "'><img src='" . URLROOT . "/images/product_01.jpg' alt=''></a>");
+        echo ("<a href='#' data-bs-toggle='modal' data-bs-target='#imgView" . $item->product_id . "'><img src='" . URLROOT . "/public/img/$item->image' alt='' style = 'height: 300px;  object-fit: cover;'></a>");
         echo ("<div class='down-content'>");
         echo ("<a href='#' data-bs-toggle='modal' data-bs-target='#imgView" . $item->product_id . "'>");
         echo ("<h4>$item->name</h4>");
         echo ("</a>");
-        echo ("<h6>$$item->price</h6>");
+        echo ("<h6 id='apicall'>$$item->price</h6>");
         echo ("<ul class='stars'>");
         echo ("<li><i class='fa fa-star'></i></li>");
         echo ("<li><i class='fa fa-star'></i></li>");
@@ -118,12 +118,12 @@ if ($_SESSION['theme'] == 'dark-theme') {
     <div class="row">
       <div class="col-md-12">
         <div class="section-heading">
-          <h2>About SussyKeychains</h2>
+          <h2 id="apicall">About SussyKeychains</h2>
         </div>
       </div>
       <div class="col-md-6">
         <div class="left-content">
-          <h4>Looking for the best products?</h4>
+          <h4 id="apicall">Looking for the best products?</h4>
           <p class="para">We sell sus keychains of everyone's favourite crewmates.</p>
           <ul class="featured-list">
             <li>Play with our keychains here!</li>
@@ -167,16 +167,20 @@ if ($_SESSION['theme'] == 'dark-theme') {
 
   </div>
 </div>
-<div class="container">
+<div class="container" id="apicall">
   <h2> What is it to be Sussy?</h2>
   <div id="definition">
-
+      <h5>Definition: </h5>
   </div>
   <div id="example">
 
   </div>
+  
 </div>
-
+<br>
+<div class="d-flex justify-content-center">
+<button class="justify-content-center"><a href="http://localhost/ECommerceProject2022/Product/theme">Change Theme</a></button>
+</div>
 
      
 <script>

@@ -3,6 +3,7 @@
   <div class="latest-products">
   <div class="container">
       <div class="row">
+        <a href = "http://localhost/ECommerceProject2022/Admin/addProduct" > Add product</a>
         <table class = "table table-bordered">
         <?php
           foreach ($data as $item) {

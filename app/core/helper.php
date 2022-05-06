@@ -31,6 +31,7 @@ include_once dirname(APPROOT).'/vendor/sonata-project/google-authenticator/src/G
             }
     }
       
+    
     function imageUpload(){
       //default value for the picture
       $filename=false;

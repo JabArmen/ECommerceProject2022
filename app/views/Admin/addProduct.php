@@ -19,7 +19,6 @@
             
         </textarea>
     </div>
-
     <div class="form-group">
         <label for="profileinput">Profile picture</label>
         <input type='file' name='picture' class='form-control' />
